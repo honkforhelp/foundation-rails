@@ -1,7 +1,4 @@
 source 'https://rubygems.org'
-gemspec
 
-gem 'rails'
-gem 'sass'
-gem 'railties'
-gem 'sprockets-es6'
+# Specify your gem's dependencies in foundation-rails.gemspec
+gemspec

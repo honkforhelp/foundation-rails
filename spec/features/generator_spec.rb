@@ -4,7 +4,6 @@ feature 'Foundation install succeeds' do
   scenario 'stylesheets assets files are added' do
     application_css_file = IO.read("#{dummy_app_path}/app/assets/stylesheets/application.css")
 
-    expect(File).to exist("#{dummy_app_path}/app/assets/stylesheets/_settings.scss")
     expect(File).to exist("#{dummy_app_path}/app/assets/stylesheets/foundation_and_overrides.scss")
     expect(application_css_file).to match(/require foundation_and_overrides/)
   end
@@ -20,6 +19,7 @@ feature 'Foundation install succeeds' do
     layout_file = IO.read("#{dummy_app_path}/app/views/layouts/application.html.erb")
 
     expect(layout_file).to match(/stylesheet_link_tag    "application"/)
+    expect(layout_file).to match(/javascript_include_tag "vendor\/modernizr"/)
     expect(layout_file).to match(/javascript_include_tag "application/)
   end
 end
